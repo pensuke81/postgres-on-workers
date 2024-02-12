@@ -1,9 +1,23 @@
 import { Hono } from 'hono'
+import { db, createDatabaseInstance } from './db'
+import { env } from 'hono/adapter'
 
-const app = new Hono()
+type Env = {
+  DATABASE_URL: string
+}
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+const app = new Hono<{ Bindings: Env }>()
+
+app
+  .use('*', async (c, next) => {
+    createDatabaseInstance(env(c).DATABASE_URL)
+    await next()
+  })
+  .get('/', async (c) => {
+    const result = await db.query.periodicTable.findMany()
+
+    console.log(result)
+    return c.json(result)
+  })
 
 export default app
