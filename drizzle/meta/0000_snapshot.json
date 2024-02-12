@@ -1,0 +1,193 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "periodic_table": {
+      "name": "periodic_table",
+      "schema": "",
+      "columns": {
+        "AtomicNumber": {
+          "name": "AtomicNumber",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Element": {
+          "name": "Element",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Symbol": {
+          "name": "Symbol",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "AtomicMass": {
+          "name": "AtomicMass",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NumberOfNeutrons": {
+          "name": "NumberOfNeutrons",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NumberOfProtons": {
+          "name": "NumberOfProtons",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NumberOfElectrons": {
+          "name": "NumberOfElectrons",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Period": {
+          "name": "Period",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Group": {
+          "name": "Group",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Phase": {
+          "name": "Phase",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Radioactive": {
+          "name": "Radioactive",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Natural": {
+          "name": "Natural",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Metal": {
+          "name": "Metal",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Nonmetal": {
+          "name": "Nonmetal",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Metalloid": {
+          "name": "Metalloid",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Type": {
+          "name": "Type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "AtomicRadius": {
+          "name": "AtomicRadius",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Electronegativity": {
+          "name": "Electronegativity",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "FirstIonization": {
+          "name": "FirstIonization",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Density": {
+          "name": "Density",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "MeltingPoint": {
+          "name": "MeltingPoint",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "BoilingPoint": {
+          "name": "BoilingPoint",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NumberOfIsotopes": {
+          "name": "NumberOfIsotopes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Discoverer": {
+          "name": "Discoverer",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Year": {
+          "name": "Year",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "SpecificHeat": {
+          "name": "SpecificHeat",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NumberOfShells": {
+          "name": "NumberOfShells",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NumberOfValence": {
+          "name": "NumberOfValence",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

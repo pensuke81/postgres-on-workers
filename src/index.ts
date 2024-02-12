@@ -1,22 +1,28 @@
 import { Hono } from 'hono'
-import { db, createDatabaseInstance } from './db'
 import { env } from 'hono/adapter'
+import { endTime, startTime, timing } from 'hono/timing'
+import { query } from '../query'
+import { asyncLocalStorage } from './async-local-storage'
+import { createDatabaseInstance, DB } from './db'
 
 type Env = {
   DATABASE_URL: string
 }
 
+const { store } = asyncLocalStorage<{ db: DB }>()
+
 const app = new Hono<{ Bindings: Env }>()
-
-app
-  .use('*', async (c, next) => {
-    createDatabaseInstance(env(c).DATABASE_URL)
-    await next()
-  })
+  .use(timing())
+  .use(
+    store((c) => ({
+      db: createDatabaseInstance(env<Env>(c).DATABASE_URL)
+    }))
+  )
   .get('/', async (c) => {
-    const result = await db.query.periodicTable.findMany()
+    startTime(c, 'query')
+    const result = await query()
+    endTime(c, 'query')
 
-    console.log(result)
     return c.json(result)
   })
 
