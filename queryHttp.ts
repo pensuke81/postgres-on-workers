@@ -1,10 +1,10 @@
+import { LocalStorage } from './src'
 import { asyncLocalStorage } from './src/async-local-storage'
-import { DB } from './src/db'
 
-const { get } = asyncLocalStorage<{ db: DB }>()
+const { get } = asyncLocalStorage<LocalStorage>()
 
-export const query = async () => {
-  const db = get('db')
+export const queryHttp = async () => {
+  const db = get('dbHttp')
 
   const result = await db.query.periodicTable.findMany({ limit: 10 })
 
